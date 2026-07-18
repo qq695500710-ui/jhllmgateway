@@ -1,20 +1,33 @@
 ﻿# jh_build_jianhuallm
 
 ## 项目简介
-一个本地 AI 兼容网关项目，用于把多种模型服务统一包装成 OpenAI 兼容接口，方便桌面工具、脚本和扩展直接调用。
+一个本地 AI 兼容网关项目，用于把多种模型服务统一包装成 OpenAI 兼容接口，方便桌面工具、脚本和浏览器扩展直接调用。
+
+## 技术支持与合作
+- 程序员小玖：微信 `aagm88888`
+- 联系方式：QQ `695500710`
+- 可有偿提供技术支持、功能扩展、二次开发、部署排错、接口对接与长期维护服务。
+## 可承接的相关业务
+- 可有偿定制本地 AI 网关、企业模型中转层、OpenAI 兼容接口服务。
+- 可承接模型聚合、鉴权、并发控制、日志审计、桌面端封装与本地部署。
+- 适合对接企业知识库、内容生成系统、浏览器扩展和自动化脚本平台。
 
 ## 原始功能
-- 提供本地 HTTP 接口，统一暴露 chat、embedding、responses 等能力。`r`n- 支持将请求路由到不同上游模型服务。`r`n- 可作为本地代理层承接桌面工具与浏览器扩展请求。
+- 提供本地 HTTP 接口，统一暴露 chat、embedding、responses 等能力。
+- 支持将请求路由到不同上游模型服务。
+- 可作为本地代理层承接桌面工具与浏览器扩展请求。
 
 ## 二次开发功能
-- 增加了本地打包、托盘化与更贴近桌面分发的运行方式。`r`n- 增加了更细的超时、重试和路由配置。`r`n- 用于给文章分发、内容改写等项目提供统一 AI 后端。
+- 增加了本地打包、托盘化与更贴近桌面分发的运行方式。
+- 增加了更细的超时、重试和路由配置。
+- 用于给文章分发、内容改写等项目提供统一 AI 后端。
 
 ## 运行方式
-```powershell`r
-python -m venv .venv`r
-.\.venv\Scripts\activate`r
-python -m pip install -r requirements.txt`r
-python server.py --config peizhi.json`r
+```powershell
+python -m venv .venv
+.\.venv\Scripts\activate
+python -m pip install -r requirements.txt
+python server.py --config peizhi.json
 ```
 
 ## 使用与署名
