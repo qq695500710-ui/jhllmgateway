@@ -1,0 +1,34 @@
+server:
+  host: "127.0.0.1"
+  # 说明：当前版本以 peizhi.json 为准；端口固定 10830
+  port: 10830
+  # 可选：给下游调用加一层简单鉴权（推荐）
+  # 调用方需带：Authorization: Bearer <api_key>
+  api_key: ""
+  # 调试开关：true 时会打印每次路由尝试/错误摘要（便于你排查上游 API 问题）
+  debug: true
+
+# 路由规则：
+# - 下游请求 body.model 如果命中这里的 key（例如 "smart"），则按 fallbacks 顺序尝试
+# - 如果下游直接传真实模型名（例如 "openai/gpt-4o"），则不会做别名展开，直接调用
+models:
+  smart:
+    # 你可以把“同一能力档位”的多个模型按优先级排列：贵/快/稳
+    fallbacks:
+      - "openai/gpt-4o"
+      - "anthropic/claude-sonnet-4-20250514"
+      - "gemini/gemini-2.5-pro"
+    retries: 1
+    timeout_seconds: 60
+
+  fast:
+    fallbacks:
+      - "openai/gpt-4o-mini"
+      - "gemini/gemini-2.5-flash"
+    retries: 1
+    timeout_seconds: 45
+
+# 默认策略（当 model 未命中别名时）
+defaults:
+  retries: 1
+  timeout_seconds: 60

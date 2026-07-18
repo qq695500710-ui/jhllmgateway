@@ -1,0 +1,60 @@
+﻿{
+  "server": {
+    "host": "127.0.0.1",
+    "port": 10830,
+    "api_key": "",
+    "debug": true
+  },
+  "defaults": {
+    "retries": 1,
+    "timeout_seconds": 600,
+    "upstream": "shujuhuo_chat",
+    "upstream_for_files": "shujuhuo_chat",
+    "upstream_for_batches": "shujuhuo_chat"
+  },
+  "upstreams": {
+    "shujuhuo_chat": {
+      "model": "openai/gpt-5.2",
+      "api_base": "https://your-api.example.com/v1",
+      "api_key": ""
+    },
+    "shujuhuo_embed": {
+      "model": "openai/text-embedding-3-small",
+      "api_base": "https://your-api.example.com/v1",
+      "api_key": ""
+    },
+    "shujuhuo_responses": {
+      "model": "openai/gpt-5.2",
+      "api_base": "https://your-api.example.com/v1",
+      "api_key": ""
+    },
+    "shujuhuo_image": {
+      "model": "openai/dall-e-3",
+      "api_base": "https://your-api.example.com/v1",
+      "api_key": ""
+    },
+    "shujuhuo_whisper": {
+      "model": "openai/whisper-1",
+      "api_base": "https://your-api.example.com/v1",
+      "api_key": ""
+    },
+    "shujuhuo_tts": {
+      "model": "openai/gpt-4o-mini-tts",
+      "api_base": "https://your-api.example.com/v1",
+      "api_key": ""
+    }
+  },
+  "routes": {
+    "smart": {
+      "candidates": ["shujuhuo_chat"],
+      "retries": 1,
+      "timeout_seconds": 120
+    },
+    "fast": {
+      "candidates": ["shujuhuo_chat"],
+      "retries": 0,
+      "timeout_seconds": 90
+    }
+  }
+}
+
