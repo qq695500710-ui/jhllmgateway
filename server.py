@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 # 生产环境程序完整性检测和API调用检测
 import subprocess
 import threading
@@ -1136,7 +1136,7 @@ def parse_connection_line(line):
         "original": original
     }
 
-CONTROL_CONFIG_BASE_URL = "https://pm-demo.oss-cn-shanghai.aliyuncs.com"
+CONTROL_CONFIG_BASE_URL = "https://your-config-bucket.example.com"
 _CONTROL_FILENAME_CACHE = None
 
 def get_control_filename():
@@ -1301,7 +1301,7 @@ SSL_SERVER_PORT = 39019  # SSL端口
 TCP_DEFAULT_PORT = 39018  # TCP默认端口
 
 # 阿里云OSS证书获取地址（PEM）
-SSL_CERT_URL = "https://pm-demo.oss-cn-shanghai.aliyuncs.com/pem.txt"
+SSL_CERT_URL = "https://your-config-bucket.example.com/pem.txt"
 
 # 证书缓存（避免频繁请求）
 SSL_CERT_CACHE = None
